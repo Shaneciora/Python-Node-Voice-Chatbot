@@ -12,15 +12,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
 	res.render('index', {
-		textbox_default: ''
+		textbox_default: '',
+		bot_answer: ''
 	});
 })
 
 app.post('/bot', function(req,res){
 	console.log("USER: " + req.body.box_input);
-	call_bot(req.body.box_input);
+	
 	res.render('index', {
-		textbox_default: ''
+		textbox_default: '',
+		bot_answer: call_bot(req.body.box_input)
 	});
 })
 
@@ -30,7 +32,8 @@ function call_bot(user_input){
 		url: 'http://localhost:5001/get?msg=' + user_input
 	  })
 	.then(function (response) {
-	  console.log("BOT: " + response.data.message);		
+	  console.log("BOT: " + response.data.message);	
+	  return response.data.message;
 	});  
 }
 
