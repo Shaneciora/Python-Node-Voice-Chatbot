@@ -8,7 +8,7 @@ app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-	res.send('Hello Wordld');
+	res.render('index');
 })
 
 var server = app.listen(5000, function () {
