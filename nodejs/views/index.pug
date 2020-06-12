@@ -11,7 +11,7 @@ head
 body
   main
     div.container
-      form(method='POST' action='/')
+      form(method='POST' action='/bot')
         label(for='text-input') Say something:
         input#text-input.form-control(type='text', placeholder='Say Hello' name='text-input')
-        input#btn.btn-primary(type = "submit", value="Submit", name='send-to-bot')
+        input#btn.btn-primary(type = "submit", value="Submit", method="post", action= name='send-to-bot')

@@ -10,16 +10,22 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function (req, res) {
-	axios({
-  	method: 'get',
-  	url: 'http://localhost:5001/get?msg=test1'
-	})
-  .then(function (response) {
-	console.log(response.data.message);		
-  });
 
 	res.render('index');
 })
+
+app.get('/bot', function(req, res){
+	axios({
+		method: 'get',
+		url: 'http://localhost:5001/get?msg=test1'
+	  })
+	.then(function (response) {
+	  console.log(response.data.message);		
+	});  
+}
+
+
+)
 
 var server = app.listen(5000, function () {
    var host = server.address().address
