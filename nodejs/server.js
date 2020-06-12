@@ -14,6 +14,9 @@ app.get('/', function (req, res) {
 	res.render('index');
 })
 
+app.post('/bot', function(req,res){
+	console.log(req.body);
+})
 
 function call_bot(user_input){
 	axios({
