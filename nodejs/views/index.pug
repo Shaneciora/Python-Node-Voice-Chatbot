@@ -20,13 +20,13 @@ body
       form(method='POST' action='/bot')
         label(for='text-input') Say something:
         input#text-input.form-control(type='text', placeholder='Say Hello' name='text-input')
-        input#btn.btn-primary(type = "submit", value="Submit", method="get", action= name='send-to-bot')
-  
+        //input#btn.btn-primary(type = "submit", value="Submit", method="get", action= name='send-to-bot')
+        button(onclick='clickme()')  Send
+        script.
+          function call_bot() {
+            
+          }
   block content
-    button(onclick='clickme()')  click
-    script.
-      function clickme() {
-        alert('sss')
-      }
+
 
 

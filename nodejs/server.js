@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 function call_bot(user_input){
 	axios({
 		method: 'get',
-		url: 'http://localhost:5001/get?msg=test1'
+		url: 'http://localhost:5001/get?msg=' + user_input
 	  })
 	.then(function (response) {
 	  console.log(response.data.message);		
