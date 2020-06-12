@@ -17,8 +17,8 @@ app.get('/', function (req, res) {
 
 app.post('/bot', function(req,res){
 	console.log(req.body);
-	let input_text = JSON.parse(req.body);
-	call_bot(input_text.box_input);
+	//let input_text = JSON.parse(req.body);
+	//call_bot(input_text.box_input);
 })
 
 function call_bot(user_input){
