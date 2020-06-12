@@ -17,12 +17,12 @@ app.get('/', function (req, res) {
 	});
 })
 
-app.post('/bot', function(req,res){
+app.post('/', function(req,res){
 	console.log("USER: " + req.body.box_input);
 	
 	res.render('index', {
 		textbox_default: '',
-		bot_answer: "Bot: " call_bot(req.body.box_input)
+		bot_answer: "Bot: " + call_bot(req.body.box_input)
 	});
 })
 
