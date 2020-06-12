@@ -44,7 +44,7 @@ def get_words(text):
     wordsList = wordsRegexp.findall(text.lower())
     return Counter(wordsList).items()
 
-def runbot(text)
+def runbot(text):
     B = ''
     H = text
     #print("User: " + H)
