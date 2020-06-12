@@ -11,13 +11,17 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
-
-	res.render('index');
+	res.render('index', {
+		textbox_default: ''
+	});
 })
 
 app.post('/bot', function(req,res){
 	console.log("USER: " + req.body.box_input);
 	call_bot(req.body.box_input);
+	res.render('index', {
+		textbox_default: ''
+	});
 })
 
 function call_bot(user_input){
