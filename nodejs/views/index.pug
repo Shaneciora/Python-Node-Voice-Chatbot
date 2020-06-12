@@ -10,13 +10,14 @@ head
   
   // Fonts
   link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap' rel='stylesheet')
-body(onload=focusBox())
-  main
-    div.container
-      script.
+script.
         function focusBox() {
           document.getElementsByClassName("text-input").focus();
         };
+body(onload=focusBox())
+  main
+    div.container
+      
       form(id='chat' method='POST' action='/bot')
         label(for='text-input') Say something:
         input#text-input.form-control(type='text', placeholder= textbox_default, name='box_input')
