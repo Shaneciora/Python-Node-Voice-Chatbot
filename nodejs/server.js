@@ -35,7 +35,7 @@ function call_bot(user_input){
 	  	console.log("BOT: " + response.data.message);	
 		var bot_response = response.data.message;
 		console.log(bot_response);
-	  	return str(bot_response);
+	  	return bot_response;
 	});  
 }
 
