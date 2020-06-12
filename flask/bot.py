@@ -44,12 +44,12 @@ def get_words(text):
     wordsList = wordsRegexp.findall(text.lower())
     return Counter(wordsList).items()
 
-if __name__ == "__main__":
+def runbot(text)
     B = ''
-    H = ' '.join(sys.argv[1:])
+    H = text
     #print("User: " + H)
     if H == '':
-        sys.exit(0)
+        return ''
 
 
     # store the association between the bot's message words and the user's response
@@ -85,4 +85,4 @@ if __name__ == "__main__":
     # tell the database the sentence has been used once more, and prepare the sentence
     B = row[1]
     cursor.execute('UPDATE sentences SET used=used+1 WHERE rowid=?', (row[0],))
-    print("Bot: " + B)
+    return B
