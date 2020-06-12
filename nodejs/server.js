@@ -14,7 +14,8 @@ app.get('/', function (req, res) {
 	res.render('index');
 })
 
-app.get('/bot', function(req, res){
+
+function call_bot(user_input){
 	axios({
 		method: 'get',
 		url: 'http://localhost:5001/get?msg=test1'
@@ -23,9 +24,6 @@ app.get('/bot', function(req, res){
 	  console.log(response.data.message);		
 	});  
 }
-
-
-)
 
 var server = app.listen(5000, function () {
    var host = server.address().address
