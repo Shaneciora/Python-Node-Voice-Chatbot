@@ -16,9 +16,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/bot', function(req,res){
-	console.log(req.body.box_input);
-	//let input_text = JSON.parse(req.body);
-	//call_bot(input_text.box_input);
+	console.log("USER: " + req.body.box_input);
+	call_bot(req.body.box_input);
 })
 
 function call_bot(user_input){
@@ -27,7 +26,7 @@ function call_bot(user_input){
 		url: 'http://localhost:5001/get?msg=' + user_input
 	  })
 	.then(function (response) {
-	  console.log(response.data.message);		
+	  console.log("BOT: " + response.data.message);		
 	});  
 }
 
