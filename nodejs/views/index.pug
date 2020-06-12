@@ -10,11 +10,11 @@ head
   
   // Fonts
   link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap' rel='stylesheet')
-body
+body(onload=focusBox())
   main
     div.container
       script.
-        window.onload = function() {
+        function focusBox() {
           document.getElementsByClassName("text-input").focus();
         };
       form(id='chat' method='POST' action='/bot')
