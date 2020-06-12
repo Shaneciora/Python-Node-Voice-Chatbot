@@ -1,10 +1,8 @@
-import {PythonShell} from 'python-shell';
-
-
 var express = require('express');
 var app = express();
+var PythonShell = require('python-shell');
 
-let options = {
+var options = {
   mode: 'text',
   pythonPath: 'scripts/py',
   pythonOptions: ['-u'], // get print results in real-time
@@ -14,9 +12,6 @@ let options = {
 
 
 app.set('view engine', 'pug');
-
-
-
 
 PythonShell.run('bot.py', options, function (err, results) {
   if (err) throw err;
