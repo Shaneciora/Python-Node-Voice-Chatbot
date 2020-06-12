@@ -14,12 +14,12 @@ body
   main
     div.container
       script.
-        function run(){
-          alert('test')
-        }
+        window.onload = function() {
+          document.getElementById("box1").focus();
+        };
       form(id='chat' method='POST' action='/bot')
         label(for='text-input') Say something:
-        input#text-input.form-control(type='text', placeholder= textbox_default, name='box_input')
+        input#text-input.form-control(id= "box1", type='text', placeholder= textbox_default, name='box_input')
         
 
 
