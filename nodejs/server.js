@@ -19,25 +19,20 @@ app.get('/', function (req, res) {
 
 app.post('/', function(req,res){
 	console.log("USER: " + req.body.box_input);
-	
-	res.render('index', {
-		textbox_default: '',
-		bot_answer: "Bot: " + call_bot(req.body.box_input)
-	});
-})
-
-function call_bot(user_input){
 	axios({
 		method: 'get',
-		url: 'http://localhost:5001/get?msg=' + user_input
+		url: 'http://localhost:5001/get?msg=' + req.body.box_input
 	  })
 	.then(function (response) {
 	  	console.log("BOT: " + response.data.message);	
 		var bot_response = response.data.message;
-		console.log(bot_response);
-	  	return bot_response;
+		res.render('index', {
+			textbox_default: '',
+			bot_answer: "Bot: " + bot_response
+		});
 	});  
-}
+
+})
 
 var server = app.listen(5000, function () {
    var host = server.address().address
