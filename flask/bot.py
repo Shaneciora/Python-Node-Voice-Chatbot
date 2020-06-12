@@ -64,7 +64,7 @@ def runbot(text):
         word_id = get_id(c, 'word', word)
         weight = sqrt(n / float(words_length))
         c.execute('INSERT INTO associations VALUES (?, ?, ?)', (word_id, sentence_id, weight))
-    connection.commit()
+    conn.commit()
 
 
     # retrieve the most likely answer from the database
