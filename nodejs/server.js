@@ -8,7 +8,7 @@ app.set('view engine', 'pug');
 
 // serve static files from the `public` folder
 app.use(express.static(__dirname + '/public'));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
 
