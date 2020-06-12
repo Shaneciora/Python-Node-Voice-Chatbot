@@ -12,13 +12,10 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function (req, res) {
 	axios({
   	method: 'get',
-  	url: 'http://localhost:5000/get?msg=test1',
-  	responseType: 'stream'
+  	url: 'http://localhost:5001/get?msg=test1'
 	})
   .then(function (response) {
-		var data = JSON.parse(response.data);
-		console.log(data);
-    //response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+	console.log(response.data.message);		
   });
 
 	res.render('index');
