@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
-var PythonShell = require('python-shell');
+var pyshell = require('python-shell');
+
+
 
 var options = {
   mode: 'text',
@@ -13,7 +15,7 @@ var options = {
 
 app.set('view engine', 'pug');
 
-PythonShell.run('bot.py', options, function (err, results) {
+pyshell.PythonShell.run('bot.py', options, function (err, results) {
   if (err) throw err;
   // results is an array consisting of messages collected during execution
   console.log('results: %j', results);
